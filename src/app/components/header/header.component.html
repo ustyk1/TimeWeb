@@ -1,0 +1,16 @@
+<div class="header">
+  <!-- <span (click)="menuStateService.menu = !menuStateService.menu">button</span> -->
+
+  <input type="checkbox" [class.checked]="menuStateService.menu" name="hamburger-toggle" id="hamburger-toggle" class="header__hamburger-toggle">
+  <label (click)="menuStateService.menu = !menuStateService.menu" class="header__hamburger-lines" for="hamburger-toggle">
+      <span class="header__hamburger-line header__hamburger-line_line1"></span>
+      <span class="header__hamburger-line header__hamburger-line_line2"></span>
+      <span class="header__hamburger-line header__hamburger-line_line3"></span>
+  </label>
+
+  <h2 class="side-bar__title title text-blue-800 lg:text-green-800 sm:text-red-800">{{title}}</h2>
+</div>
+
+
+
+

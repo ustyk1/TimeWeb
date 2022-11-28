@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
+import { MenuStateService } from 'src/app/services/menu-state.service';
 
 export interface ILinkItem { 
   path: string;
@@ -42,7 +43,9 @@ export class SideBarComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  hamburgerToggle: any = document.getElementById('hamburger-toggle');
+
+  constructor(public menuStateService: MenuStateService) { }
 
   ngOnInit(): void {
   }
@@ -51,13 +54,29 @@ export class SideBarComponent implements OnInit {
     return el.text;
   }
 
-  // setActive(text: string): void {
-  //   this.linkItems.forEach((linkItem: ILinkItem) => {
-  //     if (linkItem.text === text) {
-  //       linkItem.isActive = true;
-  //     } else {
-  //       linkItem.isActive = false;
-  //     }
-  //   })
-  // }
+  @HostBinding('class') classes = 'backdrop-blur-sm bg-white/30 absolute xl:static left-[-500px] transition-all ease-in-out duration-1000';
+
+  @HostBinding('class.open')
+  @HostBinding('class.right-0')
+  get isOpened() { return this.menuStateService.menu; };
+
+  @HostListener('window:resize', ['$event'])
+  autoOpenMenu(e: Event): void {
+
+    if(window.innerWidth >= 800) {
+      this.menuStateService.menu = false;
+     }
+  };
+  
+  @HostListener('click', ['$event']) 
+  closeMenu(e: Event): void {
+    console.log(e)
+    const element = e.target as HTMLElement;     
+
+    e.stopPropagation();
+    
+    if(element.tagName === 'ASIDE') {
+      this.menuStateService.menu = false;
+    }
+  };
 }

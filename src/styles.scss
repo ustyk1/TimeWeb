@@ -5,8 +5,41 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('/assets/fonts/SegoeUI.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('/assets/fonts/SegoeUI-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+body {
+  font-family: 'Segoe UI';
+  font-weight: normal;
+  color: var(--text-color-dark);
+}
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --side-bar-color: #f1f5f9;
+  --page-color: #e2e8f0;
+  --text-color-dark:#334155;
+  --text-color-light:#f8fafc;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
 }

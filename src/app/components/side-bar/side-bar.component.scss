@@ -1,5 +1,26 @@
-.side-bar {
-  .title {
-    border-bottom: 1px solid gray;
+:host {
+  left: -350px;
+  top: 0;
+
+  &.open{
+    left: 0;
   }
+}
+
+.side-bar {
+  box-sizing: border-box;
+  padding: 20px 30px;
+  font-family: 'Segoe UI';
+  width: 350px;
+  font-size: 1.3rem;
+  box-shadow: 5px 0 8px #cbd5e1;
+  height: 100vh;
+  background-color: var(--side-bar-color);
+
+  &__title {
+    border-bottom: 2px solid #334155;
+    padding: 0 0 30px 0;
+    margin-bottom: 30px;
+  }
+ 
 }

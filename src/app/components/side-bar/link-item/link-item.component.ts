@@ -14,7 +14,4 @@ export class LinkItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-  
 }

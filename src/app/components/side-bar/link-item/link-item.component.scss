@@ -1,3 +1,27 @@
 .active {
-  color: red;
+  background-color: #db2777;
+  // color: var(--text-color-light);
+}
+
+.link-item {
+  // border: 1px solid rgb(255, 145, 0);
+ 
+  a {
+    // border: 0.5px solid blue;
+    padding: 15px 15px;
+    cursor: pointer; 
+
+    display: flex;
+    align-items: center;
+
+    &.active {
+      transition: all 0.3s linear;
+      color: var(--text-color-light);
+    }
+
+    span {
+      font-size: 2rem;
+      margin-right: 15px;
+    }
+  }
 }

@@ -7,6 +7,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { LinkItemComponent } from './components/side-bar/link-item/link-item.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LinkItemComponent } from './components/side-bar/link-item/link-item.com
     SideBarComponent,
     DashboardComponent,
     UserProfileComponent,
-    LinkItemComponent
+    LinkItemComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
