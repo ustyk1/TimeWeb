@@ -1,0 +1,53 @@
+@use '../../../../assets/variables/variables.scss' as vars;
+
+.hamburger-toggle[name="hamburger-toggle"] {
+  display: none;
+
+  &.checked ~ .hamburger-lines > .hamburger-line {
+    &_line1 {
+      transform: rotate(50deg);
+    }
+    &_line2 {
+      transform: scaleY(0);
+    }
+    &_line3 {
+      transform: rotate(-50deg);
+    }
+  }
+}
+
+.hamburger-lines {
+  display: block;
+  height: 35px;
+  width: 35px;
+
+  position: absolute;
+  top: 17px;
+  right: 30px;
+  top: 30px;
+  z-index: 2;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hamburger-line {
+  display: block;
+  margin-bottom: 5px;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: vars.$color-pink-600;
+
+  &_line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+  &_line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+  &_line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+} 

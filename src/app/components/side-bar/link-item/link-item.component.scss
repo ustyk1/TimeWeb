@@ -1,6 +1,9 @@
+@use '../../../../assets/variables/variables.scss' as vars;
+
 .active {
-  background-color: #db2777;
+  // background-color: #db2777;
   // color: var(--text-color-light);
+  background-color: vars.$color-pink-600;
 }
 
 .link-item {
@@ -16,7 +19,7 @@
 
     &.active {
       transition: all 0.3s linear;
-      color: var(--text-color-light);
+      color: vars.$color-slate-50;
     }
 
     span {

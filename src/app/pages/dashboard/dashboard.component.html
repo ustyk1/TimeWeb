@@ -1,2 +1,8 @@
 <!-- <p>dashboard works!</p> -->
-<app-header [title]="title" ></app-header>
+<div class="dashboard dashboard-wrapper">
+  <app-header [title]="title" ></app-header>
+
+  <div class="performance-indicator-cards-wrapper">
+    <app-performance-indicator-card *ngFor="let card of cards; trackBy: trackByMethod" [card]="card"></app-performance-indicator-card>
+  </div>
+</div>

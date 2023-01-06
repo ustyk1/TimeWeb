@@ -1,4 +1,4 @@
-import { MenuStateService } from './../../services/menu-state.service';
+// import { MenuStateService } from './../../services/menu-state.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() title: string = '';
  
-  constructor(public menuStateService: MenuStateService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

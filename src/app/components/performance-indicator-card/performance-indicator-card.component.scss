@@ -1,0 +1,84 @@
+@use '../../../assets/variables/variables.scss' as vars;
+
+:host {
+  flex: 0 0 300px;
+}
+
+.card {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding-top: 20px;
+  font-size: 1.2rem;
+  position: relative;
+
+  border: 1px solid red;
+ 
+  &__icon-wrapper {
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+    box-shadow: 3px 2px 3px vars.$color-slate-300;
+
+    position: absolute;
+    top: 0;
+    left: 20px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+
+  &__text {
+    padding: 20px;
+    text-align: right;
+    box-shadow: 4px 4px 5px vars.$color-slate-300, -2px 0px 4px vars.$color-slate-300;
+    background-color: vars.$color-slate-100;;
+  }
+
+  &__title {
+    font-size: 20px;
+  }
+
+  &__indicator {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    span {
+      font-size: inherit;
+      vertical-align: middle;       
+    }
+  }
+
+  hr {
+    width: 100%;
+    height: 2px;
+    margin: 10px 0;
+    border: none;
+    background-color: vars.$color-slate-500;
+  }
+
+  &__info {
+    text-align: left;
+    
+    a {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: vars.$color-pink-600;
+      }
+    }
+  }
+  
+  &__info-icon {
+    margin-right: 10px;
+  }
+}

@@ -1,6 +1,9 @@
+@use '../../../assets/variables/variables.scss' as vars;
+
 :host {
   left: -350px;
   top: 0;
+  z-index: 100;
 
   &.open{
     left: 0;
@@ -13,12 +16,12 @@
   font-family: 'Segoe UI';
   width: 350px;
   font-size: 1.3rem;
-  box-shadow: 5px 0 8px #cbd5e1;
+  box-shadow: 5px 0 8px vars.$color-slate-300;
   height: 100vh;
-  background-color: var(--side-bar-color);
+  background-color: vars.$color-slate-100;
 
   &__title {
-    border-bottom: 2px solid #334155;
+    border-bottom: 2px solid vars.$color-slate-700;
     padding: 0 0 30px 0;
     margin-bottom: 30px;
   }

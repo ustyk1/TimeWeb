@@ -1,0 +1,7 @@
+<!-- <p>hamburger-toggle works!</p> -->
+<input type="checkbox" [class.checked]="menuStateService.menu" name="hamburger-toggle" id="hamburger-toggle" class="hamburger-toggle">
+<label (click)="menuStateService.menu = !menuStateService.menu" class="hamburger-lines" for="hamburger-toggle">
+    <span class="hamburger-line hamburger-line_line1"></span>
+    <span class="hamburger-line hamburger-line_line2"></span>
+    <span class="hamburger-line hamburger-line_line3"></span>
+</label>
