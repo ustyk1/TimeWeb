@@ -9,7 +9,14 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { LinkItemComponent } from './components/side-bar/link-item/link-item.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HamburgerToggleComponent } from './components/header/hamburger-toggle/hamburger-toggle.component';
-import { PerformanceIndicatorCardComponent } from './components/performance-indicator-card/performance-indicator-card.component';
+import { PerformanceCardComponent } from './components/performance-card/performance-card.component';
+import { ActivityCardComponent } from './components/activity-card/activity-card.component';
+import { DataService } from './services/data.service';
+import { SpinnerComponent } from './components/common/spinner/spinner.component';
+import { SpinnerService } from './services/spinner.service';
+import { DynamicCardComponent } from './components/common/dynamic-card/dynamic-card.component';
+import { TasksCardComponent } from './components/tasks-card/tasks-card.component';
+import { EmployeesStatsCardComponent } from './components/employees-stats-card/employees-stats-card.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +27,21 @@ import { PerformanceIndicatorCardComponent } from './components/performance-indi
     LinkItemComponent,
     HeaderComponent,
     HamburgerToggleComponent,
-    PerformanceIndicatorCardComponent,
+    PerformanceCardComponent,
+    ActivityCardComponent,
+    SpinnerComponent,
+    DynamicCardComponent,
+    TasksCardComponent,
+    EmployeesStatsCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    DataService,
+    SpinnerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

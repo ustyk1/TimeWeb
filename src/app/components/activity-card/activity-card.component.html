@@ -1,0 +1,16 @@
+<div class="activity-card">
+  <div class="activity-card__text">
+    <div class="activity-card__equalizer-wrapper" [style.backgroundColor]="activityCard?.cardIconBackgroundColor">
+      <img class="" src="../../../assets/images/svg/graphics.svg">
+    </div>
+    <h4 class="activity-card__title">{{activityCard?.title}}</h4>
+    <p class="activity-card__subtitle">{{activityCard?.subtitle}}</p>
+    <hr>
+    <p class="activity-card__info">
+      <a href="#">
+        <span class="activity-card__info-icon material-icons">{{activityCard?.infoIconName}}</span>
+        {{activityCard?.info}}
+      </a>
+    </p>
+  </div>
+</div>

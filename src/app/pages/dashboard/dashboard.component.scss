@@ -1,9 +1,28 @@
+@use '../../../assets/variables/variables.scss' as vars;
 
-.performance-indicator-cards-wrapper {
-  // margin-top: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-flow: row wrap;
+.dashboard {
+  .performance-cards-wrapper {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .activity-cards-wrapper {
+    margin-bottom: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .task-and-employees-stats-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+    gap: 30px;
+  }
 }

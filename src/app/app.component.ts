@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { SpinnerService } from './services/spinner.service';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'timeweb';
+  title = 'Timeweb';
 
-  constructor() { }
+  private _subscription: Subscription = Subscription.EMPTY;
+
+  public isSpinner: boolean = true;
+
+  constructor(private spinnerService: SpinnerService) { }
+
+  ngOnInit(): void {
+    this._subscription = this.spinnerService.getSpinner().subscribe((state: boolean) => {
+      this.isSpinner = state;
+    })
+  }
+
+  ngOnDestroy(): void {
+    this._subscription.unsubscribe();
+  }
 }
