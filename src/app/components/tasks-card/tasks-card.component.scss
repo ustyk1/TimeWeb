@@ -28,8 +28,12 @@
       flex-wrap: wrap;
       gap: 15px;
 
+      & > li:first-child {
+        background-color: rgba(vars.$color-slate-100, 0.3);
+      }
+
       & > li {
-        padding: 10px 20px;
+        padding: 5px 10px;
 
         display: flex;
         justify-content: flex-start;
@@ -53,7 +57,7 @@
       flex-direction: column;
 
       & > li {
-        padding: 10px 20px;
+        padding: 10px 15px;
 
         border-bottom: 2px solid vars.$color-slate-500;
 
@@ -66,6 +70,53 @@
           border-bottom: none;
         }
         
+        & > label {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          & > .checkmark {
+            flex-shrink: 0;
+            height: 20px;
+            width: 20px;
+            display: inline-block;
+
+            background-color: vars.$color-slate-100;
+            border: 2px solid  vars.$color-slate-300;
+            box-shadow: 2px 1px 2px vars.$color-slate-200, inset 1px 2px 3px vars.$color-slate-200;
+
+            position: relative;
+
+            &:after {
+              content: "";
+              width: 6px;
+              height: 16px;
+
+              position: absolute;
+              left: 5px;
+              top: 0px;
+
+              border: solid vars.$color-pink-600;
+              border-width: 0 3px 3px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+
+              display: none;
+            }
+          }
+
+          & >  input:checked ~ .checkmark {
+            background-color: vars.$color-slate-200;
+            border: 2px solid  vars.$color-slate-300;
+            box-shadow: 2px 1px 2px vars.$color-slate-200, inset 1px 2px 3px vars.$color-slate-100;
+          }
+
+          & >  input:checked ~ .checkmark:after {
+            display: block;
+          }
+        }
+
         & > div {
           flex-shrink: 0;
           display: flex;
@@ -74,7 +125,7 @@
             width: 30px;
             height: 30px;
             display: inline-block;
-            
+
             border-radius: 50%;
             color: vars.$color-slate-50;
 
@@ -84,11 +135,11 @@
 
             &:first-child {
               margin-right: 10px;
-              background-color: vars.$color-pink-400;
+              background-color: vars.$color-green-400;
             }
 
             &:last-child {
-              background-color: vars.$color-green-400;
+              background-color: vars.$color-pink-400;
             }
           }
         }

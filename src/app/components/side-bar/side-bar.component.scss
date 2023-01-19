@@ -1,7 +1,7 @@
 @use '../../../assets/variables/variables.scss' as vars;
 
 :host {
-  left: -350px;
+  left: -300px;
   top: 0;
   z-index: 100;
 
@@ -14,7 +14,7 @@
   box-sizing: border-box;
   padding: 20px 30px;
   font-family: 'Segoe UI';
-  width: 350px;
+  width: 300px;
   font-size: 1.3rem;
   box-shadow: 5px 0 8px vars.$color-slate-300;
   height: 100vh;

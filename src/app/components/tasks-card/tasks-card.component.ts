@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ITaskForBug, ITasksCardMenuTab } from 'src/app/pages/dashboard/dashboard.component';
 
 @Component({
   selector: 'app-tasks-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tasks-card.component.scss']
 })
 export class TasksCardComponent implements OnInit {
+  @Input() tasksCardMenuTab: ITasksCardMenuTab | undefined
+  @Input() taskForBug: ITaskForBug | undefined
 
   constructor() { }
 
