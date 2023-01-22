@@ -22,21 +22,21 @@ export interface IActivityCard {
 }
 
 export interface ITasksCardMenuTab { 
-  linkIconName_1: string,
-  linkTitle_1: string,
-         
-  linkIconName_2: string,
-  linkTitle_2: string,
-    
-  linkIconName_3: string,
-  linkTitle_3: string,
+  linkIconName: string,
+  linkTitle: string,
+  isActive: boolean
 }
 
 export interface ITaskForBug { 
-  bugTaskTitle_1: string,
-  bugTaskTitle_2: string,
-  bugTaskTitle_3: string,
-  bugTaskTitle_4: string, 
+  bugTaskTitle: string,
+  isDone: boolean
+}
+
+export interface INewEmployeeDetails {
+  employeeId: number,
+  employeeInitials: string,
+  employeeSalary: string,
+  employeeCountry: string,
 }
 
 @Component({
@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
   public activityCards!: IActivityCard[];
   public tasksCardMenuTabs!: ITasksCardMenuTab[];
   public tasksForBugs!: ITaskForBug[];
-
+  public newEmployeesDetails!: INewEmployeeDetails[];
 
   // public tasksMenu
 
@@ -76,7 +76,7 @@ export class DashboardComponent implements OnInit {
     )
 
     this._subscriptions.push(
-      this.dataService.getHeaderOfTasksCards().subscribe((tasksCardMenuTabs: ITasksCardMenuTab[]): void => {
+      this.dataService.getTasksCardMenuTabs().subscribe((tasksCardMenuTabs: ITasksCardMenuTab[]): void => {
         this.tasksCardMenuTabs = tasksCardMenuTabs;
 
         this.spinnerService.setSpinner(false);
@@ -84,8 +84,16 @@ export class DashboardComponent implements OnInit {
     )
 
     this._subscriptions.push(
-      this.dataService.gettasksForBugs().subscribe((tasksForBugs: ITaskForBug[]): void => {
+      this.dataService.getTasksForBugs().subscribe((tasksForBugs: ITaskForBug[]): void => {
         this.tasksForBugs = tasksForBugs;
+
+        this.spinnerService.setSpinner(false);
+      })
+    )
+
+    this._subscriptions.push(
+      this.dataService.getNewEmployeesDetails().subscribe((newEmployeesDetails: INewEmployeeDetails[]): void => {
+        this.newEmployeesDetails = newEmployeesDetails;
 
         this.spinnerService.setSpinner(false);
       })

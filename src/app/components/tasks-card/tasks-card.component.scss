@@ -28,10 +28,6 @@
       flex-wrap: wrap;
       gap: 15px;
 
-      & > li:first-child {
-        background-color: rgba(vars.$color-slate-100, 0.3);
-      }
-
       & > li {
         padding: 5px 10px;
 
@@ -115,6 +111,16 @@
           & >  input:checked ~ .checkmark:after {
             display: block;
           }
+
+          //  .checkmark.done {
+          //   background-color: vars.$color-slate-200;
+          //   border: 2px solid  vars.$color-slate-300;
+          //   box-shadow: 2px 1px 2px vars.$color-slate-200, inset 1px 2px 3px vars.$color-slate-100;
+          // }
+
+          // .checkmark.done:after {
+          //   display: block;
+          // }
         }
 
         & > div {
@@ -133,17 +139,21 @@
             justify-content: center;
             align-items: center;
 
-            &:first-child {
+            &.edit-icon{
               margin-right: 10px;
               background-color: vars.$color-green-400;
             }
 
-            &:last-child {
+            &.close-icon {
               background-color: vars.$color-pink-400;
             }
           }
         }
       }
     }
+  }
+
+  .active {
+    background-color: rgba(vars.$color-slate-100, 0.3);
   }
 }

@@ -7,8 +7,8 @@ import { ITaskForBug, ITasksCardMenuTab } from 'src/app/pages/dashboard/dashboar
   styleUrls: ['./tasks-card.component.scss']
 })
 export class TasksCardComponent implements OnInit {
-  @Input() tasksCardMenuTab: ITasksCardMenuTab | undefined
-  @Input() taskForBug: ITaskForBug | undefined
+  @Input() tasksCardMenuTabs: ITasksCardMenuTab[] | undefined
+  @Input() tasksForBugs: ITaskForBug[] | undefined
 
   constructor() { }
 

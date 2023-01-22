@@ -15,29 +15,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Dacota Rice</td>
-            <td>36.738</td>
-            <td>Sweden</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Dacota Rice</td>
-            <td>36.738</td>
-            <td>Sweden</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Dacota Rice</td>
-            <td>36.738</td>
-            <td>Sweden</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Dacota Rice</td>
-            <td>36.738</td>
-            <td>Sweden</td>
+          <tr *ngFor="let employeeDetails of newEmployeesDetails">
+            <td>{{employeeDetails.employeeId}}</td>
+            <td>{{employeeDetails.employeeInitials}}</td>
+            <td>{{employeeDetails.employeeSalary}}</td>
+            <td>{{employeeDetails.employeeCountry}}</td>
           </tr>
         </tbody>
       </table>

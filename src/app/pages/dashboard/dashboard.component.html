@@ -10,11 +10,9 @@
   </div>
 
   <div class="task-and-employees-stats-cards-wrapper">
-    <!-- <app-tasks-card *ngFor="let task of tasksForBugs; trackBy: trackByMethod" [taskForBug]="task" ></app-tasks-card> -->
+    <app-tasks-card [tasksCardMenuTabs]="tasksCardMenuTabs" [tasksForBugs]="tasksForBugs"></app-tasks-card>
 
-    <app-tasks-card *ngFor="let card of tasksCardMenuTabs; trackBy: trackByMethod" [tasksCardMenuTab]="card" ></app-tasks-card>
-
-    <app-employees-stats-card></app-employees-stats-card>
+    <app-employees-stats-card [newEmployeesDetails]="newEmployeesDetails"></app-employees-stats-card>
   </div>  
 </div>
 

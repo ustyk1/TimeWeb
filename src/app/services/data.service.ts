@@ -1,4 +1,4 @@
-import { IActivityCard, IPerformanceCard, ITaskForBug, ITasksCardMenuTab } from './../pages/dashboard/dashboard.component';
+import { IActivityCard, INewEmployeeDetails, IPerformanceCard, ITaskForBug, ITasksCardMenuTab } from './../pages/dashboard/dashboard.component';
 import { Injectable } from '@angular/core';
 import { map, Observable, of, timer } from 'rxjs';
 
@@ -7,6 +7,7 @@ export interface IData {
   activityCards: IActivityCard[]; 
   tasksCardMenuTabs: ITasksCardMenuTab[];
   tasksForBugs: ITaskForBug[];
+  newEmployeesDetails: INewEmployeeDetails[];
 }
 
 @Injectable({
@@ -52,6 +53,7 @@ export class DataService {
         infoIconName: 'access_time',
       },
     ],
+    
     activityCards: [
       {
         cardIconBackgroundColor: '#22c55e',
@@ -78,24 +80,66 @@ export class DataService {
 
     tasksCardMenuTabs: [
       {
-        linkIconName_1: 'bug_report',
-        linkTitle_1: 'Bugs',
-         
-        linkIconName_2: 'language',
-        linkTitle_2: 'Website',
-          
-        linkIconName_3: 'cloud',
-        linkTitle_3: 'Server',
+        linkIconName: 'bug_report',
+        linkTitle: 'Bugs',
+        isActive: true
+      },
+      {
+        linkIconName: 'language',
+        linkTitle: 'Website',
+        isActive: false
+      },
+      {          
+        linkIconName: 'cloud',
+        linkTitle: 'Server',
+        isActive: false
       }
     ],
 
     tasksForBugs: [
       { 
-        bugTaskTitle_1: 'Sign cotract for "What are conference  organizers afraid of?"',
-        bugTaskTitle_2: 'Sign cotract for "What are conference organizers afraid of?"',
-        bugTaskTitle_3: 'Sign cotract for "What are conference organizers afraid of?"',
-        bugTaskTitle_4: 'Sign cotract for "What are conference organizers afraid of?"' 
+        bugTaskTitle: 'Sign cotract for "What are conference  organizers afraid of?"',
+        isDone: true
+      },
+      { 
+        bugTaskTitle: 'Sign cotract for "What are conference  organizers afraid of?"',
+        isDone: false
+      },
+      { 
+        bugTaskTitle: 'Sign cotract for "What are conference  organizers afraid of?"',
+        isDone: false
+      },
+      { 
+        bugTaskTitle: 'Sign cotract for "What are conference  organizers afraid of?"',
+        isDone: true
       }
+    ],
+
+    newEmployeesDetails: [
+      {
+        employeeId: 1,
+        employeeInitials: 'Dacota Rice',
+        employeeSalary: '36.738',
+        employeeCountry: 'Sweden',
+      },
+      {
+        employeeId: 1,
+        employeeInitials: 'Dacota Rice',
+        employeeSalary: '36.738',
+        employeeCountry: 'Sweden',
+      },
+      {
+        employeeId: 1,
+        employeeInitials: 'Dacota Rice',
+        employeeSalary: '36.738',
+        employeeCountry: 'Sweden',
+      },
+      {
+        employeeId: 1,
+        employeeInitials: 'Dacota Rice',
+        employeeSalary: '36.738',
+        employeeCountry: 'Sweden',
+      },
     ]
   }
 
@@ -111,15 +155,21 @@ export class DataService {
     )
   }
 
-  public getHeaderOfTasksCards(): Observable<ITasksCardMenuTab[]> {
+  public getTasksCardMenuTabs(): Observable<ITasksCardMenuTab[]> {
     return timer(1000).pipe(
       map(() => this._data.tasksCardMenuTabs)
     )
   }
 
-  public gettasksForBugs(): Observable<ITaskForBug[]> {
+  public getTasksForBugs(): Observable<ITaskForBug[]> {
     return timer(1000).pipe(
       map(() => this._data.tasksForBugs)
+    )
+  }
+
+  public getNewEmployeesDetails(): Observable<INewEmployeeDetails[]> {
+    return timer(1000).pipe(
+      map(() => this._data.newEmployeesDetails)
     )
   }
 }

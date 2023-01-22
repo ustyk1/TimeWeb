@@ -3,134 +3,22 @@
     <div class="card__header">
       <h2>Tasks:</h2>
       <ul>
-        <li><span class="material-icons">{{tasksCardMenuTab?.linkIconName_1}}</span> {{tasksCardMenuTab?.linkTitle_1}}</li>
-        <li><span class="material-icons">{{tasksCardMenuTab?.linkIconName_2}}</span> {{tasksCardMenuTab?.linkTitle_2}}</li>
-        <li><span class="material-icons">{{tasksCardMenuTab?.linkIconName_3}}</span> {{tasksCardMenuTab?.linkTitle_3}}</li>
+        <li *ngFor="let tab of tasksCardMenuTabs" [ngClass]="{active: tab.isActive}"><span class="material-icons">{{tab.linkIconName}}</span> {{tab.linkTitle}}</li>
       </ul>
     </div>
-    <!-- <div class="card__body">
-      <ul>
-        <li>
-          <label>
-            <input type="checkbox" hidden>
-            <span class="checkmark"></span>
-            <span> {{taskForBug?.bugTaskTitle_1}}</span>
-          </label>
-          <div>
-            <span>
-              <span class="material-icons">edit</span>
-            </span>
-            <span>
-              <span class="material-icons">close</span>
-            </span>
-          </div>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox" hidden>
-            <span class="checkmark"></span>
-            <span> {{taskForBug?.bugTaskTitle_2}}</span>
-          </label>
-          <div>
-            <span>
-              <span class="material-icons">edit</span>
-            </span>
-            <span>
-              <span class="material-icons">close</span>
-            </span>
-          </div>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox" hidden>
-            <span class="checkmark"></span>
-            <span> {{taskForBug?.bugTaskTitle_3}}</span>
-          </label>
-          <div>
-            <span>
-              <span class="material-icons">edit</span>
-            </span>
-            <span>
-              <span class="material-icons">close</span>
-            </span>
-          </div>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox" hidden>
-            <span class="checkmark"></span>
-            <span> {{taskForBug?.bugTaskTitle_4}}</span>
-          </label>
-          <div>
-            <span>
-              <span class="material-icons">edit</span>
-            </span>
-            <span>
-              <span class="material-icons">close</span>
-            </span>
-          </div>
-        </li>
-      </ul>
-    </div> -->
-
     <div class="card__body">
       <ul>
-        <li>
+        <li *ngFor="let taskForBugs of tasksForBugs">
           <label>
             <input type="checkbox" hidden>
             <span class="checkmark"></span>
-            <span> Sign cotract for "What are conference organizers afraid of?"</span>
+            <span> {{taskForBugs.bugTaskTitle}}</span>
           </label>
-          <div>
-            <span>
+          <div> 
+            <span class="edit-icon">
               <span class="material-icons">edit</span>
             </span>
-            <span>
-              <span class="material-icons">close</span>
-            </span>
-          </div>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox" hidden>
-            <span class="checkmark"></span>
-            <span> Sign cotract for "What are conference organizers afraid of?"</span>
-          </label>
-          <div>
-            <span>
-              <span class="material-icons">edit</span>
-            </span>
-            <span>
-              <span class="material-icons">close</span>
-            </span>
-          </div>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox" hidden>
-            <span class="checkmark"></span>
-            <span> Sign cotract for "What are conference organizers afraid of?"</span>
-          </label>
-          <div>
-            <span>
-              <span class="material-icons">edit</span>
-            </span>
-            <span>
-              <span class="material-icons">close</span>
-            </span>
-          </div>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox" hidden>
-            <span class="checkmark"></span>
-            <span> Sign cotract for "What are conference organizers afraid of?"</span>
-          </label>
-          <div>
-            <span>
-              <span class="material-icons">edit</span>
-            </span>
-            <span>
+            <span class="close-icon">
               <span class="material-icons">close</span>
             </span>
           </div>
@@ -139,7 +27,3 @@
     </div>
   </app-dynamic-card>
 </div>
-
-
-
-

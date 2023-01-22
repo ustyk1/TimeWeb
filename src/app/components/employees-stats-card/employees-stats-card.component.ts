@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { INewEmployeeDetails } from 'src/app/pages/dashboard/dashboard.component';
 
 @Component({
   selector: 'app-employees-stats-card',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employees-stats-card.component.scss']
 })
 export class EmployeesStatsCardComponent implements OnInit {
+  @Input() newEmployeesDetails: INewEmployeeDetails[] | undefined
 
   constructor() { }
 
