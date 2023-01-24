@@ -23,6 +23,8 @@ export class DashboardComponent implements OnInit {
   constructor(private dataService: DataService, private spinnerService: SpinnerService) { }
 
   ngOnInit(): void {
+    this.spinnerService.setSpinner(true);
+    
     this._subscriptions.push(
       this.dataService.getCards().subscribe((cards: IPerformanceCard[]): void => {
         this.performanceCards = cards;
