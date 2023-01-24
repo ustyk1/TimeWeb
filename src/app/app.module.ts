@@ -17,6 +17,9 @@ import { SpinnerService } from './services/spinner.service';
 import { DynamicCardComponent } from './components/common/dynamic-card/dynamic-card.component';
 import { TasksCardComponent } from './components/tasks-card/tasks-card.component';
 import { EmployeesStatsCardComponent } from './components/employees-stats-card/employees-stats-card.component';
+import { PrimaryInputComponent } from './components/profile-edit-card/primary-input/primary-input.component';
+import { ProfileEditCardComponent } from './components/profile-edit-card/profile-edit-card.component';
+import { UserProfileCardComponent } from './components/user-profile-card/user-profile-card.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,10 @@ import { EmployeesStatsCardComponent } from './components/employees-stats-card/e
     DynamicCardComponent,
     TasksCardComponent,
     EmployeesStatsCardComponent,
+    PrimaryInputComponent,
+    ProfileEditCardComponent,
+    UserProfileComponent,
+    UserProfileCardComponent
   ],
   imports: [
     BrowserModule,

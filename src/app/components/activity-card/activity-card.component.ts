@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IActivityCard } from 'src/app/pages/dashboard/dashboard.component';
+import { IActivityCard } from 'src/app/interfaces/common';
 
 @Component({
   selector: 'app-activity-card',
@@ -7,7 +7,6 @@ import { IActivityCard } from 'src/app/pages/dashboard/dashboard.component';
   styleUrls: ['./activity-card.component.scss']
 })
 export class ActivityCardComponent implements OnInit {
-
   @Input() activityCard: IActivityCard | undefined
 
   constructor() { }

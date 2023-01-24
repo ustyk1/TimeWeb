@@ -12,7 +12,7 @@ export class AppComponent {
 
   private _subscription: Subscription = Subscription.EMPTY;
 
-  public isSpinner: boolean = true;
+  public isSpinner: boolean = false;
 
   constructor(private spinnerService: SpinnerService) { }
 

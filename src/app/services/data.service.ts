@@ -1,14 +1,6 @@
-import { IActivityCard, INewEmployeeDetails, IPerformanceCard, ITaskForBug, ITasksCardMenuTab } from './../pages/dashboard/dashboard.component';
+import { IActivityCard, IData, INewEmployeeDetails, IPerformanceCard, ITaskForBug } from './../interfaces/common';
 import { Injectable } from '@angular/core';
-import { map, Observable, of, timer } from 'rxjs';
-
-export interface IData {
-  performanceCards: IPerformanceCard[],
-  activityCards: IActivityCard[]; 
-  tasksCardMenuTabs: ITasksCardMenuTab[];
-  tasksForBugs: ITaskForBug[];
-  newEmployeesDetails: INewEmployeeDetails[];
-}
+import { map, Observable, timer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -78,24 +70,6 @@ export class DataService {
       }
     ],
 
-    tasksCardMenuTabs: [
-      {
-        linkIconName: 'bug_report',
-        linkTitle: 'Bugs',
-        isActive: true
-      },
-      {
-        linkIconName: 'language',
-        linkTitle: 'Website',
-        isActive: false
-      },
-      {          
-        linkIconName: 'cloud',
-        linkTitle: 'Server',
-        isActive: false
-      }
-    ],
-
     tasksForBugs: [
       { 
         bugTaskTitle: 'Sign cotract for "What are conference  organizers afraid of?"',
@@ -152,12 +126,6 @@ export class DataService {
   public getActivityCards(): Observable<IActivityCard[]> {
     return timer(1000).pipe(
       map(() => this._data.activityCards)
-    )
-  }
-
-  public getTasksCardMenuTabs(): Observable<ITasksCardMenuTab[]> {
-    return timer(1000).pipe(
-      map(() => this._data.tasksCardMenuTabs)
     )
   }
 

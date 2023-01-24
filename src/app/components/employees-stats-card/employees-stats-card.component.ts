@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { INewEmployeeDetails } from 'src/app/pages/dashboard/dashboard.component';
+import { INewEmployeeDetails } from 'src/app/interfaces/common';
 
 @Component({
   selector: 'app-employees-stats-card',

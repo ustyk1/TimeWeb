@@ -1,4 +1,4 @@
-import { IPerformanceCard } from '../../pages/dashboard/dashboard.component';
+import { IPerformanceCard } from './../../interfaces/common';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({

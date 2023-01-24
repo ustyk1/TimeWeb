@@ -1,43 +1,9 @@
+import { TASKS_CARD_MENU_TABS } from './../../constants/common';
 import { SpinnerService } from './../../services/spinner.service';
 import { DataService } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-
-export interface IPerformanceCard { 
-  title: string;
-  index: string;
-  indexIcon: string;
-  cardIconName: string;
-  info: string;
-  infoIconName: string;
-  cardIconBackgroundColor: string;
-}
-
-export interface IActivityCard { 
-  cardIconBackgroundColor: string;
-  title: string;
-  subtitle: string;
-  info: string;
-  infoIconName: string;
-}
-
-export interface ITasksCardMenuTab { 
-  linkIconName: string,
-  linkTitle: string,
-  isActive: boolean
-}
-
-export interface ITaskForBug { 
-  bugTaskTitle: string,
-  isDone: boolean
-}
-
-export interface INewEmployeeDetails {
-  employeeId: number,
-  employeeInitials: string,
-  employeeSalary: string,
-  employeeCountry: string,
-}
+import { map, Subscription, timer } from 'rxjs';
+import { IActivityCard, INewEmployeeDetails, IPerformanceCard, ITaskForBug, ITasksCardMenuTab } from 'src/app/interfaces/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -50,11 +16,9 @@ export class DashboardComponent implements OnInit {
   public title: string = 'Dashboard';
   public performanceCards!: IPerformanceCard[];
   public activityCards!: IActivityCard[];
-  public tasksCardMenuTabs!: ITasksCardMenuTab[];
+  public tasksCardMenuTabs: ITasksCardMenuTab[] = TASKS_CARD_MENU_TABS;
   public tasksForBugs!: ITaskForBug[];
   public newEmployeesDetails!: INewEmployeeDetails[];
-
-  // public tasksMenu
 
   constructor(private dataService: DataService, private spinnerService: SpinnerService) { }
 
@@ -70,14 +34,6 @@ export class DashboardComponent implements OnInit {
     this._subscriptions.push(
       this.dataService.getActivityCards().subscribe((activityCards: IActivityCard[]): void => {
         this.activityCards = activityCards;
-
-        this.spinnerService.setSpinner(false);
-      })
-    )
-
-    this._subscriptions.push(
-      this.dataService.getTasksCardMenuTabs().subscribe((tasksCardMenuTabs: ITasksCardMenuTab[]): void => {
-        this.tasksCardMenuTabs = tasksCardMenuTabs;
 
         this.spinnerService.setSpinner(false);
       })

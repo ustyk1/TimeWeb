@@ -3,7 +3,7 @@
     <div class="card__header">
       <h2>Tasks:</h2>
       <ul>
-        <li *ngFor="let tab of tasksCardMenuTabs" [ngClass]="{active: tab.isActive}"><span class="material-icons">{{tab.linkIconName}}</span> {{tab.linkTitle}}</li>
+        <li *ngFor="let tab of tasksCardMenuTabs" [ngClass]="{active: tab.isActive}" (click)="checkActiveTab(tab.linkTitle)"><span class="material-icons">{{tab.linkIconName}}</span> {{tab.linkTitle}}</li>
       </ul>
     </div>
     <div class="card__body">

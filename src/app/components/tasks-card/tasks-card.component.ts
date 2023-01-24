@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ITaskForBug, ITasksCardMenuTab } from 'src/app/pages/dashboard/dashboard.component';
+import { ITaskForBug, ITasksCardMenuTab } from 'src/app/interfaces/common';
 
 @Component({
   selector: 'app-tasks-card',
@@ -7,7 +7,7 @@ import { ITaskForBug, ITasksCardMenuTab } from 'src/app/pages/dashboard/dashboar
   styleUrls: ['./tasks-card.component.scss']
 })
 export class TasksCardComponent implements OnInit {
-  @Input() tasksCardMenuTabs: ITasksCardMenuTab[] | undefined
+  @Input() tasksCardMenuTabs!: ITasksCardMenuTab[]
   @Input() tasksForBugs: ITaskForBug[] | undefined
 
   constructor() { }
@@ -15,4 +15,13 @@ export class TasksCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public checkActiveTab(tabText: string): void {
+    this.tasksCardMenuTabs.forEach((tab: ITasksCardMenuTab):  void => {
+      if (tab.linkTitle === tabText) {
+        tab.isActive = true;
+      } else {
+        tab.isActive = false;
+      }
+    })
+  } 
 }

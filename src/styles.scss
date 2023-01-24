@@ -40,6 +40,20 @@ ul {
 // }
 body {
   background-color: #e2e8f0;
+
+  & {
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: #e2e8f0;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #db2777;
+      border-radius: 10px;
+    }
+  }
 }
 
 .title {
