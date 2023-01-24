@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+  public title: string = 'User Profile';
 
-  constructor() { }
+  constructor(private spinnerService: SpinnerService) { }
 
   ngOnInit(): void {
   }

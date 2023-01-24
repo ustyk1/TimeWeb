@@ -1,0 +1,30 @@
+<div class="profile-edit-card">
+
+  <app-dynamic-card>
+    <div class="card__header">
+      <h2>Edit Profile</h2>
+      <p>Complete your profile</p>
+    </div>
+    <div class="card__body">
+      <form action="#" class="user-profile-form">
+        <app-primary-input [labelText]="'Company'" class="user-profile-form__company-input"></app-primary-input>
+        <app-primary-input [labelText]="'User name'" class="user-profile-form__username-input"></app-primary-input>
+        <app-primary-input [labelText]="'Email address'" class="user-profile-form__email-input"></app-primary-input>
+  
+        <app-primary-input [labelText]="'First name'" class="user-profile-form__first-name-input"></app-primary-input>
+        <app-primary-input [labelText]="'Last name'" class="user-profile-form__last-name-input"></app-primary-input>
+  
+        <app-primary-input [labelText]="'Address'" class="user-profile-form__address-input"></app-primary-input>
+  
+        <app-primary-input [labelText]="'City'" class="user-profile-form__city-input"></app-primary-input>
+        <app-primary-input [labelText]="'Country'" class="user-profile-form__country-input"></app-primary-input>
+        <app-primary-input [labelText]="'Postal code'" class="user-profile-form__postal-code-input"></app-primary-input>
+  
+        <app-primary-input [labelText]="'About me'" [inputType]="inputTypeEnum.TEXT_AREA" class="user-profile-form__about-me-input"></app-primary-input>
+  
+        <button>UPDATE PROFILE</button>
+      </form>
+    </div>
+  </app-dynamic-card>
+  
+</div>

@@ -1,0 +1,42 @@
+@use '../../../../assets/variables/variables.scss' as vars;
+
+.primary-input-wrapper {
+  color: vars.$color-slate-600;
+  font-size: 16px;
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  label {
+    padding: 5px;
+  }
+
+  input {
+    min-width: 100px;
+    padding: 3px 5px;
+
+    background: transparent;
+    border-bottom: 1px solid vars.$color-slate-700;
+    font-size: 18px;
+    font-weight: 600;
+
+    &:focus {
+      border: none;
+      outline: none;
+      border-bottom: 2px solid vars.$color-pink-600;
+    }
+  }
+
+  textarea {
+    padding: 5px 0; 
+    background: transparent;
+    border-bottom: 1px solid vars.$color-slate-700;
+    resize: none;
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid vars.$color-pink-600 
+    }
+  }
+}

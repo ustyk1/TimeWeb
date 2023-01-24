@@ -1,0 +1,9 @@
+<div class="primary-input-wrapper">
+  <label for="">{{labelText}}</label>
+  <input type="text" id="" *ngIf="inputType === inputTypeEnum.TEXT else textarea">
+
+  <ng-template #textarea>
+    <textarea name="" id="" cols="30" rows="2"></textarea>
+  </ng-template>
+</div>
+
