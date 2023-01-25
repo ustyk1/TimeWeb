@@ -1,5 +1,9 @@
 @use '../../../assets/variables/variables.scss' as vars;
 
+:host {
+  grid-area: profile-edit-card;
+}
+
 .profile-edit-card {
 
   .card__header {
@@ -13,6 +17,10 @@
     position: relative;
     top: -20px;
 
+    & > h2 {
+      margin-bottom: 10px;
+    }
+
     & > p {
       font-size: 18px;
     }
@@ -23,61 +31,12 @@
   .user-profile-form {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(6, minmax(100px, 1fr));
-    grid-template-rows: repeat(6, auto);
-    // grid-template-areas:
-    // "company company username username email email"
-    // "first-name first-name first-name last-name last-name last-name"
-    // "address address address address address address"
-    // "city city country country postal-code postal-code"
-    // "about-me about-me about-me about-me about-me about-me";
-   
-    &__company-input {
-      // grid-area: company;
-      grid-column: span 2;
-    }
-    &__username-input {
-      // grid-area: username;
-      grid-column: span 2;
-    }
-    &__email-input {
-      // grid-area: email;
-      grid-column: span 2;
-    }
-    &__first-name-input {
-      // grid-area: first-name;
-      grid-column: span 3;
-    }
-    &__last-name-input {
-      // grid-area: last-name;
-      grid-column: span 3;
-    }
-    &__address-input {
-      // grid-area: address;
-      grid-column: span 6;
-    }
-    &__city-input {
-      // grid-area: city ;
-      grid-column: span 2;
-    }
-    &__country-input {
-      // grid-area: country;
-      grid-column: span 2;
-    }
-    &__postal-code-input {
-      // grid-area: postal-code;
-      grid-column: span 2;
-    }
-    &__about-me-input {
-      // grid-area: about-me;
-      grid-column: span 6;
-    }
+    grid-template-columns: repeat(1, minmax(80px, 1fr));
+    grid-template-rows: repeat(11, auto);
   }
 
   button {
-    grid-column: span 2;
-    grid-column: 5/7;
-
+    max-width: 220px;
     padding: 5px 10px;
     margin-top: 10px;
 
@@ -86,6 +45,49 @@
 
     &:active {
       transform: scale(0.96);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .user-profile-form {
+      grid-template-columns: repeat(6, minmax(80px, 1fr));
+      grid-template-rows: repeat(6, auto);
+    
+      &__company-input {
+        grid-column: span 2;
+      }
+      &__username-input {
+        grid-column: span 2;
+      }
+      &__email-input {
+        grid-column: span 2;
+      }
+      &__first-name-input {
+        grid-column: span 3;
+      }
+      &__last-name-input {
+        grid-column: span 3;
+      }
+      &__address-input {
+        grid-column: span 6;
+      }
+      &__city-input {
+        grid-column: span 2;
+      }
+      &__country-input {
+        grid-column: span 2;
+      }
+      &__postal-code-input {
+        grid-column: span 2;
+      }
+      &__about-me-input {
+        grid-column: span 6;
+      }
+    }
+
+    button {
+      grid-column: span 2;
+      grid-column: 5/7;
     }
   }
 }

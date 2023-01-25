@@ -7,22 +7,42 @@
     margin-bottom: 50px;
   
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   .activity-cards-wrapper {
     margin-bottom: 50px;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .task-and-employees-stats-cards-wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     align-items: stretch;
     gap: 20px;
+
+    @media (min-width: 1280px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }

@@ -16,6 +16,11 @@
     position: relative;
     top: -20px;
 
+    & > h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
     & > p {
       font-size: 18px;
     }
@@ -26,10 +31,19 @@
       width: 100%;
 
       & > thead {
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+
         tr {
+          display: none;
           border-bottom: 2px solid #64748b;
           text-align: left;
           color: #0891b2;
+          font-size: 20px;
 
           & > th {
             padding: 10px 15px;
@@ -39,12 +53,56 @@
 
       & > tbody {
         tr {
+          display: block;
           border-bottom: 2px solid #64748b;
+
           &:last-child {
             border-bottom: none;
           }
+
           & > td {
+            display: block;
             padding: 10px 15px;
+            text-align: right;
+
+            &::before {
+              content: attr(data-label);
+              color: #0891b2;
+              font-size: 20px;
+              font-weight: 700;
+              float: left;
+            }
+          }
+        }
+      }
+
+      @media (min-width: 576px) {
+        & > thead {
+          clip: auto;
+          height: auto;
+          width: auto;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+
+          tr {
+            display:table-row;
+          }
+        }
+
+        & > tbody {
+          tr {
+             display:table-row;
+
+            & > td {
+              display:table-cell;
+              text-align: left;
+
+              &::before {
+                content: '';
+                float: none;
+              }
+            }
           }
         }
       }

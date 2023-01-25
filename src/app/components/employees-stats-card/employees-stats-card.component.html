@@ -16,10 +16,10 @@
         </thead>
         <tbody>
           <tr *ngFor="let employeeDetails of newEmployeesDetails">
-            <td>{{employeeDetails.employeeId}}</td>
-            <td>{{employeeDetails.employeeInitials}}</td>
-            <td>{{employeeDetails.employeeSalary}}</td>
-            <td>{{employeeDetails.employeeCountry}}</td>
+            <td data-label="ID">{{employeeDetails.employeeId}}</td>
+            <td data-label="Name">{{employeeDetails.employeeInitials}}</td>
+            <td data-label="Salary">{{employeeDetails.employeeSalary}}</td>
+            <td data-label="Country">{{employeeDetails.employeeCountry}}</td>
           </tr>
         </tbody>
       </table>

@@ -32,28 +32,22 @@ ul {
   padding: 0;
 }
 
-// :root {
-//   --side-bar-color: #f1f5f9;
-//   --page-color: #e2e8f0;
-//   --text-color-dark:#334155;
-//   --text-color-light:#f8fafc;
-// }
 body {
   background-color: #e2e8f0;
 
-  & {
-    &::-webkit-scrollbar {
-      width: 3px;
-    }
-    &::-webkit-scrollbar-track {
-      border-radius: 10px;
-      background: #e2e8f0;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: #db2777;
-      border-radius: 10px;
-    }
-  }
+  // & {
+  //   &::-webkit-scrollbar {
+  //     width: 3px;
+  //   }
+  //   &::-webkit-scrollbar-track {
+  //     border-radius: 10px;
+  //     background: #e2e8f0;
+  //   }
+  //   &::-webkit-scrollbar-thumb {
+  //     background: #db2777;
+  //     border-radius: 10px;
+  //   }
+  // }
 }
 
 .title {

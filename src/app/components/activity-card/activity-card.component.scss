@@ -1,11 +1,12 @@
 @use '../../../assets/variables/variables.scss' as vars;
 
 .activity-card {
-  // max-width: 500px;
+  max-width: 500px;
   // width: 100%;
   height: 100%;
   box-sizing: border-box;
   padding-top: 20px;
+  margin: 0 auto;
 
   font-size: 1.2rem;
   color: vars.$color-slate-600;
@@ -48,7 +49,7 @@
 
   .activity-card__subtitle {
     margin-bottom: auto;
-    font-size: 24px;
+    font-size: 22px;
   }
 
   hr {
@@ -62,5 +63,20 @@
 
   .activity-card__info {
     font-size: 20px;
+
+    a {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: vars.$color-pink-600;
+      }
+    }
+  }
+
+  
+  &__info-icon {
+    margin-right: 10px;
   }
 }

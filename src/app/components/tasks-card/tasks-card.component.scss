@@ -17,15 +17,21 @@
     top: -20px;
 
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    & > h2 {
+      min-width: 60px;
+      font-size: 24px;
+    }
 
     & > ul {
       display: flex;
+      flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      flex-wrap: wrap;
       gap: 15px;
 
       & > li {
@@ -43,6 +49,14 @@
         & > span {
           margin-right: 5px;
         }
+      }
+    }
+
+    @media (min-width: 576px) {
+      justify-content: space-between;
+
+      & > ul {
+        flex-direction: row;
       }
     }
   }
@@ -111,21 +125,11 @@
           & >  input:checked ~ .checkmark:after {
             display: block;
           }
-
-          //  .checkmark.done {
-          //   background-color: vars.$color-slate-200;
-          //   border: 2px solid  vars.$color-slate-300;
-          //   box-shadow: 2px 1px 2px vars.$color-slate-200, inset 1px 2px 3px vars.$color-slate-100;
-          // }
-
-          // .checkmark.done:after {
-          //   display: block;
-          // }
         }
 
         & > div {
           flex-shrink: 0;
-          display: flex;
+          display: none;
 
           & > span {
             width: 30px;
@@ -147,6 +151,9 @@
             &.close-icon {
               background-color: vars.$color-pink-400;
             }
+          }
+          @media (min-width: 576px) {
+            display: flex;
           }
         }
       }
