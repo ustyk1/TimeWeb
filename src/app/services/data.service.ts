@@ -19,7 +19,7 @@ export class DataService {
       },
       {
         title: 'Revenue',
-        cardIconName: '../../../../assets/images/svg/shop_white.svg',
+        cardIconName: 'assets/images/svg/shop_white.svg',
         cardIconBackgroundColor: '#eab308',
         index:  `  34,245`,
         indexIcon: 'attach_money',
@@ -28,7 +28,7 @@ export class DataService {
       },
       {
         title: 'Fixed Issues',
-        cardIconName: '../../../../assets/images/svg/tag_white.svg',
+        cardIconName: 'assets/images/svg/tag_white.svg',
         cardIconBackgroundColor: '#3b82f6',
         index: '75',
         indexIcon: '',
@@ -37,7 +37,7 @@ export class DataService {
       },
       {
         title: 'Followers',
-        cardIconName: '../../../../assets/images/svg/paperplane_white.svg',
+        cardIconName: 'assets/images/svg/paperplane_white.svg',
         cardIconBackgroundColor: '#db2777',
         index: '245',
         indexIcon: 'add',
